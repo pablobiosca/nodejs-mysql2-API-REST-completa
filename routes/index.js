@@ -1,17 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const pool = require("../dbconnection")
+
 const employees = require("./employees")
+const {ping,index} = require("../controllers/index_controller")
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.send("hola")
-});
+router.get('/', index);
 
-router.get('/ping', async function(req, res, next) {
-  let result = await pool.query("select 1+1 as result")
-  res.json(result)
-});
+router.get('/ping', ping);
 
 router.use(employees)
 

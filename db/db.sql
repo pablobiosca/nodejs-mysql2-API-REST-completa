@@ -8,3 +8,10 @@ create table employee (
     salary INT DEFAULT NULL,
     primary key(id) 
 )
+
+INSERT INTO employee VALUES 
+    (1,"peter",450)
+    (2,"susan",1000)
+    (3,"mike",2000)
+    (4,"jhoni",1800)
+    (5,"liza",2400)
