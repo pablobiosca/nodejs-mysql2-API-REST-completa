@@ -20,5 +20,11 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api', employees);
 
+app.use((req,res,next)=>{
+    res.status(404).json({
+        message:"endpoint not found"
+    })
+})
+
 app.use(express.static(path.join(__dirname, 'public')));
 module.exports = app;
